@@ -5,8 +5,9 @@ const kebabize = (str) => {
 
 
 //I use this line to test in an HTML document, safely ignore
-document.getElementById("primus").innerHTML = 
-kebabize('myCamelHas3Humps')
+const input = kebabize('myCamelHas3Humps')
+document.getElementById('input').innerText = input()
+document.getElementById('primus').innerText = input
 // returns "my-camel-has-humps"
 
 
