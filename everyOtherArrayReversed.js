@@ -1,27 +1,18 @@
+console.log('So, s l o w')
 
 
 function snail(arr) {
     let trail = []
-
-    // setting coordinates
-    let row = 0
-    let col = 0
-
     for (let i=0; i<arr.length; i++) {
-        trail.push(arr[0][i])
-    }
-    for (let k=1; k<arr.length; k++) {
-        trail.push(arr[k][2])
-    }
-    for (let m=1; m>=0; m--) {
-        trail.push(arr[2][m]).reverse
-    }
-    trail.push(arr[1][0])
-    trail.push(arr[1][1])
-
+        i % 2 == 0 ?
+        arr[i].forEach( e => trail.push(e)):
+        arr[i].reverse().forEach(e => trail.push(e))
+    };
+    console.log(trail.concat())
     return trail
-
 };
+
+
 
 
 // below used for testing, safely ignore
