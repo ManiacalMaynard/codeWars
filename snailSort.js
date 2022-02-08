@@ -1,26 +1,20 @@
 
 
 function snail(arr) {
+    // let us have an empty array to fill!
     let trail = []
 
-    // setting coordinates
-    let row = 0
-    let col = 0
-
-    for (let i=0; i<arr.length; i++) {
-        trail.push(arr[0][i])
+    while(arr.length){
+        trail.push(...arr.shift())
+        for (let i=0; i<arr.length; i++) {
+            trail.push(arr[i].pop())
+        }
+        trail.push(...(arr.pop() || []).reverse())
+        for (let j=arr.length-1; j>=0; j--) {
+            trail.push(arr[j].shift())
+        }
     }
-    for (let k=1; k<arr.length; k++) {
-        trail.push(arr[k][2])
-    }
-    for (let m=1; m>=0; m--) {
-        trail.push(arr[2][m]).reverse
-    }
-    trail.push(arr[1][0])
-    trail.push(arr[1][1])
-
     return trail
-
 };
 
 
