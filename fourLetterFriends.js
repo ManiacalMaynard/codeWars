@@ -1,28 +1,22 @@
-console.log('What are these, hands?')
+console.log('What are these, hands?') //on load test, ignore
 
 // write a function that iterates through an array of strings and returns a new array of only 4-letter strings
 
 function friend(friends){
-  //verify string / count length / if 4 push / if not moveon
-  let results = []
-
+  let results = [] //init resulting array
+  //set loop for iteration
   for (let i=0; i < friends.length; i++) {
-
-    if (
-    friends[i].includes(`/[a-zA-Z]/gm`) &&
-    friends[i].length == 4 ) {
-    results.push(friends[i])
-    }
+    friends[i] = friends[i].replaceAll(/[^a-zA-Z]/g, '') //removes non-letter entities
+    friends[i].length == 4 ? //evaluate string length
+    results.push(friends[i]) : //if true push to return array
+    results //if not continue loop
   }
-  
-  return friends[0]
-  console.log(results)
+
+  return results //return resulting array
 }
 
-//I use this line to test in an HTML document, safely ignore
-document.getElementById("input").innerHTML = 
-`friend(["Ryan", "Jimmy", "1234", "4", "Cool Man"])`
+//below is for my testing environment, safely ignore
+document.getElementById("input").innerHTML = `friend(["Ryan", "Jimm", "1234", "4", "Cool Man"])`
 
-document.getElementById("primus").innerHTML = 
-friend(["Ryan", "Jimm", "1234", "4", "Cool Man"])
+document.getElementById("primus").innerHTML = friend(["Ryan", "Jimm", "1234", "4", "Cool Man"])
 
