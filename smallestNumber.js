@@ -14,8 +14,7 @@ setChallengeText('Given an array of integers your solution should find the small
 
 // okay, spread opperator returns lowest number in the input array
 const compare = (arr) => {
-  let result = Math.min(...arr)
-  return result
+  return Math.min(...arr)
 }
 
 // and set the values to their DOM elements
