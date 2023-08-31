@@ -12,12 +12,18 @@ let output = document.getElementById('primus')
 // The function:
 
 function middlePermutation(s) {
-  // First create mainStrings from input, each starting with a different first letter in original order. Ex: "abc", "bca", "cab"
+  // First create mainStrings from input, each starting with a different first letter in original order. Ex: "abc", "bca", "cab", "acb", "bac", "cba"
   let mainArray = []
   for ( i=0; i < s.length; i++ ) {
-    mainArray.push( s.slice(i, i+1) + s.replace(s[i], '') )
+    x = s.split('')
+    x.shift()
+    x.unshift(s[i])
+
+    mainArray.push( x )
   }
+
   return mainArray
+
   // Second iterate each mainString keeping the inital letter in place and swapping the rest of the letters adding each mutation to the output array until a repeat has occured, break to new mainString
 
 }
