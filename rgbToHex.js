@@ -3,8 +3,8 @@ document.getElementById('challenge').innerText = 'passing in RGB decimal values 
 // samples: 35231 => [1,3,2,5,3] || 0 => [0]
 
 // the variables
-let input = document.getElementById('input').value
-// input.value = [255, 0, 0] 
+let input = document.getElementById('input')
+input.value = [255, 0, 0]
 
 // update the output on input change
 input.oninput = function() { rgbToHex(input.value) }
@@ -12,9 +12,9 @@ input.oninput = function() { rgbToHex(input.value) }
 let outputString = document.getElementById('primus')
 
 // the actual functionality for each challenge goes here
-function rgbToHex () {
+function rgbToHex (input.value) {
     outputString.innerText = r + g + b
 }
 
 // testing the entire script runs because I'm a little 'stitious
-console.log(input)
+console.log(input.value)
